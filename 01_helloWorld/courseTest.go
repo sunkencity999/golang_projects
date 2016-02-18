@@ -26,6 +26,7 @@ func half(n int) (int, bool) {
 	return n / 2, n%2 == 0
 }
 
+//did this one mostly right--just failed to declare the type the first time and tried to use []int instead of just int.
 func varied(k ...int) int {
 	var big int
 	for _, v := range k {
@@ -34,6 +35,14 @@ func varied(k ...int) int {
 		}
 	}
 	return big
+}
+
+func foo(num ...int) int {
+	var sum int
+	for _, m := range num {
+		sum += m
+	}
+	return sum
 }
 
 func main() {
@@ -54,4 +63,9 @@ func main() {
 	fmt.Println(l, odd)
 	s := varied(4, 18, 24, 36)
 	fmt.Println(s)
+	k := foo(1, 2, 3, 4)
+	fmt.Println(k)
+	aSlice := []int{1, 2, 3, 4}
+	fmt.Println(foo(aSlice...))
+
 }
