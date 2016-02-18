@@ -53,7 +53,7 @@ func main() {
 		fmt.Println("You are the true Christopher. Congratulations!")
 	}
 
-	//if-else if-else statement
+	//if-else if-else statement loop
 	p := 0
 	for p < 10 {
 		if p <= 4 {

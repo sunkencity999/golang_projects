@@ -2,12 +2,12 @@ package main
 
 import (
 	"fmt"
-	"golang_projects/stringutil"
 )
 
 func main() {
+	myName := "Christopher"
 	//func main() is required for executable files. It does stuff.
-	fmt.Println(stringutil.Myname)
+	fmt.Println(myName)
 	var a int = 10
 	//long form declaration and initialization of a variable. name+value defined
 	b := "hamsammich"

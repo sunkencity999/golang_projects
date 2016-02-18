@@ -25,13 +25,13 @@ func main() {
 	}
 
 	//conditional loop with break. Do this action if the following action remains true and then break the loop
-	i := 0
+	i := 0 //initializer
 	for {
 		fmt.Println(i)
-		if i >= 10 {
+		if i >= 10 { //condition
 			break
 		}
-		i++
+		i++ //post-condition instruction
 	}
 
 	//conditional loop with continue and break. It will run the chunk of code before
@@ -47,4 +47,5 @@ func main() {
 			break //stop running the loop at this point.
 		}
 	}
+
 }
