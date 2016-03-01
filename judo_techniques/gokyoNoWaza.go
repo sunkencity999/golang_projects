@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"golang_projects/judo_techniques/clear"
+	"os"
 )
 
 func main() {
@@ -22,7 +23,7 @@ func main() {
 	//adding values at appropriate locations within the sets.
 
 	//throws for Dai Ikkyo
-	daiIkkyo[0] = "De Ashi Harai \t Advanced Foot Sweep \n"
+	daiIkkyo[0] = "\nDe Ashi Harai \t Advanced Foot Sweep \n"
 	daiIkkyo[1] = "Hiza Guruma \t Knee Whirl \n"
 	daiIkkyo[2] = "Sasae Tsuri Komi Ashi \t Supporting Lift-Pull Foot \n"
 	daiIkkyo[3] = "Uki Goshi \t Floating Hip \n"
@@ -32,7 +33,7 @@ func main() {
 	daiIkkyo[7] = "Morote Seoi Nage \t Two Hand Shoulder Throw \n"
 
 	//throws for Dai Nikkyo
-	daiNikyo[0] = "Kosoto Gari \t Minor Outer Reap\n"
+	daiNikyo[0] = "\nKosoto Gari \t Minor Outer Reap\n"
 	daiNikyo[1] = "Kouchi Gari \t Minor Inner Reap\n"
 	daiNikyo[2] = "Koshi Guruma \t Hip Whirl\n"
 	daiNikyo[3] = "Tsuri Komi Goshi \t Lift Pull Hip\n"
@@ -42,7 +43,7 @@ func main() {
 	daiNikyo[7] = "Uchi Mata \t Inner Thigh\n"
 
 	//throws for Dai Sankyo
-	daiSankyo[0] = "Kosoto Gake \t Minor Outer Hook\n"
+	daiSankyo[0] = "\nKosoto Gake \t Minor Outer Hook\n"
 	daiSankyo[1] = "Tsuri Goshi \t Lifting Hip\n"
 	daiSankyo[2] = "Yoko Otoshi \t Side Drop\n"
 	daiSankyo[3] = "Ashi Guruma \t Foot Whirl\n"
@@ -52,7 +53,7 @@ func main() {
 	daiSankyo[7] = "Kata Guruma \t Shoulder Whirl\n"
 
 	//throws for Dai Yonkyo
-	daiYonkyo[0] = "Sumi Gaeshi \t Corner Reversal\n"
+	daiYonkyo[0] = "\nSumi Gaeshi \t Corner Reversal\n"
 	daiYonkyo[1] = "Tani Otoshi \t Valley Drop\n"
 	daiYonkyo[2] = "Hane Maki Komi \t Springing Body Wrap\n"
 	daiYonkyo[3] = "Sukui Nage \t Scooping Throw\n"
@@ -62,7 +63,7 @@ func main() {
 	daiYonkyo[7] = "Uki Otoshi \t Floating Drop\n"
 
 	//throws for Dai Gokyo
-	daiGokyo[0] = "Osoto Guruma \t Major Outer Whirl\n"
+	daiGokyo[0] = "\nOsoto Guruma \t Major Outer Whirl\n"
 	daiGokyo[1] = "Uki Waza \t Floating Technique\n"
 	daiGokyo[2] = "Yoko Wakare \t Side Separation\n"
 	daiGokyo[3] = "Yoko Guruma \t Side Whirl\n"
@@ -72,7 +73,7 @@ func main() {
 	daiGokyo[7] = "Yoko Gake \t Side Dash\n"
 
 	//throws from the Shinmesho-no-waza (new techniques)
-	shinMesho[0] = "Morote Gari \t Two Hand Reap\n"
+	shinMesho[0] = "\nMorote Gari \t Two Hand Reap\n"
 	shinMesho[1] = "Kuchiki Taoshi \t Dead Tree Drop\n"
 	shinMesho[2] = "Kibisu Gaeshi \t Heel Trip\n"
 	shinMesho[3] = "Uchi Mata Sukashi \t Inner Thigh Avoidance\n"
@@ -100,6 +101,7 @@ func main() {
 	shinMesho[25] = "Seoi Otoshi \t Shoulder Drop\n"
 	shinMesho[25] = "Yama Arashi \t Mountain Storm\n"
 
+	//assining dai slices to greater gokyo slice
 	gokyo[0] = daiIkkyo
 	gokyo[1] = daiNikyo
 	gokyo[2] = daiSankyo
@@ -117,37 +119,38 @@ func main() {
 
 	//prompt for user input and store it, build menu, return values
 	var usrInput int
-	fmt.Print("Please select the list from the Gokyo No Waza you wish to see: \n 1.Dai Ikkyo\n 2.Dai Nikyo\n 3.Dai Sankyo\n 4.Dai Yonkyo\n 5.Dai Gokyo\n 6.Shin Meshyo\n")
+	fmt.Print("Please select the list from the Gokyo No Waza you wish to see: \n 1.Dai Ikkyo\n 2.Dai Nikyo\n 3.Dai Sankyo\n 4.Dai Yonkyo\n 5.Dai Gokyo\n 6.Shin Meshyo\n 7.Exit\n")
 	fmt.Scan(&usrInput)
 
 	inpValue := usrInput
-	i := inpValue
-	//
-	for i = 0; i < 7; i++ {
+	for i := inpValue; i <= 7; {
 
-		if inpValue == 0 {
+		if i == 1 {
 			fmt.Println(daiIkkyoResult)
 		}
-		if inpValue == 1 {
+		if i == 2 {
 			fmt.Println(daiNikyoResult)
 		}
-		if inpValue == 2 {
+		if i == 3 {
 			fmt.Println(daiSankyoResult)
 		}
-		if inpValue == 3 {
+		if i == 4 {
 			fmt.Println(daiYonkyoResult)
 		}
-		if inpValue == 4 {
+		if i == 5 {
 			fmt.Println(daiGokyoResult)
 		}
-		if inpValue == 5 {
+		if i == 6 {
 			fmt.Println(shinMeshoResult)
 		}
-		fmt.Print("Please select the list from the Gokyo No Waza you wish to see: \n 1.Dai Ikkyo\n 2.Dai Nikyo\n 3.Dai Sankyo\n 4.Dai Yonkyo\n 5.Dai Gokyo\n 6.Shin Meshyo\n")
-		fmt.Scan(&usrInput)
+		if i == 7 {
+			fmt.Println("Great job studying Judo!")
+			os.Exit(1)
+		}
+		fmt.Print("Please select the list from the Gokyo No Waza you wish to see: \n 1.Dai Ikkyo\n 2.Dai Nikyo\n 3.Dai Sankyo\n 4.Dai Yonkyo\n 5.Dai Gokyo\n 6.Shin Meshyo\n 7.Exit\n")
+		fmt.Scan(&i)
 		clear.CallClear()
 		continue
-
 	}
 
 }

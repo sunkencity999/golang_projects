@@ -13,7 +13,7 @@ var clear map[string]func() //makes a map for storing clear func expressions / f
 func init() {
 	clear = make(map[string]func()) // initialize the clear variable, making it accessible to the rest of our code
 	clear["linux"] = func() {
-		cmd := exec.Command("clear") //this command clears the terminal on Linux Os
+		cmd := exec.Command("clear") //this command clears the terminal on Unix Os
 		cmd.Stdout = os.Stdout       //gives the cmd variable access to Stdout on the os
 		cmd.Run()                    //executes the command
 	}
@@ -21,11 +21,6 @@ func init() {
 		cmd := exec.Command("cls") //clears the terminal in Windows Os
 		cmd.Stdout = os.Stdout     //gives cmd variable access to Stdout on the os
 		cmd.Run()
-	}
-	clear["mac"] = func() {
-		cmd := exec.Command("clear") //this command clears the terminal on Linux Os
-		cmd.Stdout = os.Stdout       //gives the cmd variable access to Stdout on the os
-		cmd.Run()                    //executes the command
 	}
 
 }
@@ -36,7 +31,7 @@ func CallClear() {
 	if ok {                          //if we defined a clear function for that platform
 		value() //execute it
 	} else { //if platform unsupported
-		panic("Cannot clear screen, platform is unsupported.")
+		fmt.Println("Cannot clear screen between selections with this Operating System.")
 	}
 }
 
