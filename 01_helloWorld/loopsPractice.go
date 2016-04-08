@@ -12,16 +12,16 @@ func check(n ...int) []int {
 
 func main() {
 	//simple loop
-	for i := 0; i <= 10; i++ {
+	for i := 0; i < 5; i++ {
 		fmt.Println(i)
 	}
 
 	//loop with if statement
-	for i := 0; i < 10; i++ {
-		if i == 5 {
-			fmt.Println(i)
+	for h := 0; h <= 5; h++ {
+		if h == 5 {
+			fmt.Println("You have found the H!")
 		} else {
-			fmt.Println("This ain't 5.")
+			fmt.Println("This number is not the H :-( )")
 		}
 	}
 
@@ -30,42 +30,56 @@ func main() {
 	for {
 		fmt.Println(k)
 		k++
-		if k >= 10 {
+		if k < 5 {
 			continue
 		}
 		break
 	}
 
-	//switch statement
+	//switch statement and taking user input
 	var usrInput string
-	fmt.Print("Please input your name: ")
+	fmt.Print("What is your name, User?: ")
 	fmt.Scan(&usrInput)
-	taken := usrInput
 
-	switch taken {
+	rslt := usrInput
+
+	switch rslt {
 	case "Christopher":
-		fmt.Println("Welcome, Programmer")
+		fmt.Println("Hello, programmer!")
 	default:
-		fmt.Println("You are not the programmer. Begone, Peasant!")
-	}
+		fmt.Println("You are not the Programmer. Begone!")
 
-	//taking user input
+	}
 
 	//creating a slice using make
-	list := make([]int, 3, 5)
-	list[0] = 7
-	list[1] = 8
-	list[2] = 9
-	for run := range list {
-		fmt.Println(run)
-	}
+	ex := make([]int, 3)
+	ex[0] = 1
+	ex[1] = 2
+	ex[2] = 3
+	fmt.Println(ex)
+
 	//creating a slice with shorthand
-	listTwo := []int{1, 2, 3, 4}
-	listThree := []int{5, 6, 7, 8}
+	ext := make([]int, 5)
+	ext[0] = 1
+	ext[1] = 2
+	fmt.Println(ext)
+	//deleting from a slice
 
-	listTwo = append(listTwo, listThree...)
-	fmt.Println(listTwo)
+	//creating a map (key/value pair)
+	top := map[string]string{}
+	top["Chris"] = "Programmer"
+	top["Restayall"] = "Ain't shit"
+	fmt.Println(top)
 
+	var myMap = make(map[string]string)
+	myMap["One"] = "Singular Sensation"
+	myMap["Two"] = "hands, feet, eyes, lungs"
+	fmt.Print(myMap)
+
+	//using range to iterate over a map
+	for key, value := range myMap {
+		fmt.Println(key, " - ", value)
+	}
 	//using the range of an array
 	p := check(2, 3, 4, 5)
 	fmt.Println(p)
